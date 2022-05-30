@@ -8,6 +8,7 @@ import { GetnameComponent } from './base/in-out/input/getname/getname.component'
 import { NameComponent } from './base/in-out/input/name/name.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { HeaderModule } from './shared/header/header.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,14 @@ import { MatSliderModule } from '@angular/material/slider';
     BaseComponent,
     InOutComponent,
     GetnameComponent,
-    NameComponent
+    NameComponent,
+
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
