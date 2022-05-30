@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-name',
@@ -11,6 +11,8 @@ export class NameComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  fullNewName: string = 'Frank Smith';
   @Output() pname = new EventEmitter<string>();
   addName(value: string) {
     this.pname.emit(value);

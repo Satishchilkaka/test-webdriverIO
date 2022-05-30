@@ -9,8 +9,10 @@ export class GetnameComponent implements OnInit {
 
   constructor() { }
 
+  @Input() fullName: string = '';
+
   ngOnInit(): void {
   }
-  name: string = 'TEST';
+
 
 }
