@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  selector: boolean = false;
+  selectorDropdown() {
+    this.selector = !this.selector;
+  }
+  selected: string = "Input output";
+  isToggle: number = 1;
   constructor() { }
 
   ngOnInit(): void {

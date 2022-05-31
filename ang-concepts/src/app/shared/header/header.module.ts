@@ -9,7 +9,7 @@ import { NameComponent } from 'src/app/base/in-out/input/name/name.component';
 
 
 const appRoutes: Routes = [
-  { path: 'inputOutput', component: BaseComponent },
+  { path: 'inputoutput', component: NameComponent },
 
 
 ]

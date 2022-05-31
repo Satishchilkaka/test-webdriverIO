@@ -10,6 +10,7 @@ export class NameComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('test');
   }
 
   fullNewName: string = 'Frank Smith';

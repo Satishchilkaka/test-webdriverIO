@@ -9,6 +9,10 @@ import { NameComponent } from './base/in-out/input/name/name.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { HeaderModule } from './shared/header/header.module';
+import { RouterModule, Routes } from '@angular/router';
+const appRoutes: Routes = [
+  { path: 'inputoutput', component: BaseComponent },
+]
 
 @NgModule({
   declarations: [
@@ -23,7 +27,12 @@ import { HeaderModule } from './shared/header/header.module';
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    HeaderModule
+    HeaderModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true }
+    )
+
   ],
   providers: [],
   bootstrap: [AppComponent]

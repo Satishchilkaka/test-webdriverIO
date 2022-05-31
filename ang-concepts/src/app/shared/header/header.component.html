@@ -1,19 +1,185 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="acmeNavBar">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a
-              class="nav-link"
-              aria-current="page"
-              routerLink="/inputOutput"
-              routerLinkActive="active"
-              >Input Output</a
-            >
+<div class="2xl:container 2xl:mx-auto">
+  <div class="bg-white rounded shadow-lg py-5 px-7">
+    <nav class="flex justify-between">
+      <div class="flex items-center space-x-3 lg:pr-16 pr-6">
+        <h2 class="font-normal text-3xl leading-6 text-gray-800">eShop</h2>
+      </div>
+
+      <!-- For medium and plus sized devices -->
+      <ul class="hidden md:flex flex-auto space-x-2">
+        <li
+          class="nav-item active"
+          (click)="isToggle = 1"
+          [ngClass]="
+            'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-2 py-3 font-normal text-xl leading-3 shadow-md rounded ' +
+            (isToggle === 1
+              ? 'text-white bg-indigo-600'
+              : 'text-gray-600 border border-white bg-gray-50')
+          "
+        >
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/inputoutput"
+            routerLinkActive="active"
+          >
+            Input output
+          </a>
+        </li>
+        <li
+          (click)="isToggle = 2"
+          [ngClass]="
+            'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xl leading-3 shadow-md rounded ' +
+            (isToggle === 2
+              ? 'text-white bg-indigo-600'
+              : 'text-gray-600 border border-white bg-gray-50')
+          "
+        >
+          Space
+        </li>
+        <li
+          (click)="isToggle = 3"
+          [ngClass]="
+            'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xl leading-3 shadow-md rounded ' +
+            (isToggle === 3
+              ? 'text-white bg-indigo-600'
+              : 'text-gray-600 border border-white bg-gray-50')
+          "
+        >
+          Game
+        </li>
+        <li
+          (click)="isToggle = 4"
+          [ngClass]="
+            'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xl leading-3 shadow-md rounded ' +
+            (isToggle === 4
+              ? 'text-white bg-indigo-600'
+              : 'text-gray-600 border border-white bg-gray-50')
+          "
+        >
+          Utility
+        </li>
+        <li
+          (click)="isToggle = 5"
+          [ngClass]="
+            'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer px-3 py-2.5 font-normal text-xl leading-3 shadow-md rounded ' +
+            (isToggle === 5
+              ? 'text-white bg-indigo-600'
+              : 'text-gray-600 border border-white bg-gray-50')
+          "
+        >
+          Cards
+        </li>
+      </ul>
+      <div class="flex space-x-5 justify-center items-center pl-2">
+        <div
+          class="relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+        >
+          <svg
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            width="25px"
+            height="30px"
+            viewBox="0 0 40 36"
+            style="enable-background:new 0 0 40 36;"
+            xml:space="preserve"
+          >
+            <g id="Page-1_4_" sketch:type="MSPage">
+              <g
+                id="Desktop_4_"
+                transform="translate(-84.000000, -410.000000)"
+                sketch:type="MSArtboardGroup"
+              >
+                <path
+                  id="Cart"
+                  sketch:type="MSShapeGroup"
+                  class="st0"
+                  d="M94.5,434.6h24.8l4.7-15.7H92.2l-1.3-8.9H84v4.8h3.1l3.7,27.8h0.1
+               c0,1.9,1.8,3.4,3.9,3.4c2.2,0,3.9-1.5,3.9-3.4h12.8c0,1.9,1.8,3.4,3.9,3.4c2.2,0,3.9-1.5,3.9-3.4h1.7v-3.9l-25.8-0.1L94.5,434.6"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </nav>
+    <!-- for smaller devcies -->
+
+    <div class="block md:hidden w-full mt-5">
+      <div
+        (click)="selectorDropdown()"
+        class="cursor-pointer px-4 py-3 text-white bg-indigo-600 rounded flex justify-between items-center w-full"
+      >
+        <div class="flex space-x-2">
+          <span class="font-semibold text-sm leading-3">Selected: </span>
+          <p
+            id="textClicked"
+            class="font-normal text-sm leading-3 focus:outline-none hover:bg-gray-800 duration-100 cursor-pointer"
+          >
+            {{ selected }}
+          </p>
+        </div>
+        <svg
+          id="ArrowSVG"
+          class="transform"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 9L12 15L18 9"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+      <div class="relative">
+        <ul
+          [ngClass]="
+            'font-normal text-base leading-4 absolute top-2 w-full rounded shadow-md ' +
+            (selector ? 'block' : 'hidden')
+          "
+        >
+          <li
+            (click)="selected = 'Input Output'; selectorDropdown()"
+            class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xl leading-3 font-normal"
+          >
+            Input Output
+          </li>
+          <li
+            (click)="selected = 'Space'; selectorDropdown()"
+            class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xl leading-3 font-normal"
+          >
+            Space
+          </li>
+          <li
+            (click)="selected = 'Game'; selectorDropdown()"
+            class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xl leading-3 font-normal"
+          >
+            Game
+          </li>
+          <li
+            (click)="selected = 'Utility'; selectorDropdown()"
+            class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xl leading-3 font-normal"
+          >
+            Utility
+          </li>
+          <li
+            (click)="selected = 'Cards'; selectorDropdown()"
+            class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xl leading-3 font-normal"
+          >
+            Cards
           </li>
         </ul>
       </div>
     </div>
-  </nav>
-</header>
+  </div>
+</div>
