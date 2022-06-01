@@ -13,7 +13,7 @@ export class NameComponent implements OnInit {
     console.log('test');
   }
 
-  fullNewName: string = 'Frank Smith';
+  fullNewName: string = 'John Doe';
   @Output() pname = new EventEmitter<string>();
   addName(value: string) {
     this.pname.emit(value);

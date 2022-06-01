@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { HeaderModule } from './shared/header/header.module';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductComponent } from './base/in-out/output/product/product.component';
+import { ProductdetailsComponent } from './base/in-out/output/productdetails/productdetails.component';
 const appRoutes: Routes = [
   { path: 'inputoutput', component: BaseComponent },
 ]
@@ -21,6 +23,8 @@ const appRoutes: Routes = [
     InOutComponent,
     GetnameComponent,
     NameComponent,
+    ProductComponent,
+    ProductdetailsComponent,
 
   ],
   imports: [
