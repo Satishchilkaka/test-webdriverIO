@@ -1,17 +1,20 @@
-import { NgModule } from '@angular/core';
+import { Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header.component';
-import { BaseComponent } from 'src/app/base/base.component';
 import { NameComponent } from 'src/app/base/in-out/input/name/name.component';
+import { TestComponent } from 'src/app/test/test.component';
+import { ProductComponent } from 'src/app/base/in-out/output/product/product.component';
+import { ProductdetailsComponent } from 'src/app/base/in-out/output/productdetails/productdetails.component';
+import { LoginComponent } from 'src/app/base/in-out/output/login/login.component';
 
 
 
 
 const appRoutes: Routes = [
   { path: 'inputoutput', component: NameComponent },
-
-
+  { path: 'output', component: LoginComponent },
+  { path: 'test', component: TestComponent },
 ]
 @NgModule({
   imports: [

@@ -35,8 +35,16 @@
               : 'text-gray-600 border border-white bg-gray-50')
           "
         >
-          Space
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/output"
+            routerLinkActive="active"
+          >
+            Output
+          </a>
         </li>
+
         <li
           (click)="isToggle = 3"
           [ngClass]="
@@ -152,13 +160,27 @@
             (click)="selected = 'Input Output'; selectorDropdown()"
             class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xl leading-3 font-normal"
           >
-            Input Output
+            <a
+              class="nav-link"
+              aria-current="page"
+              routerLink="/inputoutput"
+              routerLinkActive="active"
+            >
+              Input output
+            </a>
           </li>
           <li
-            (click)="selected = 'Space'; selectorDropdown()"
+            (click)="selected = 'Output'; selectorDropdown()"
             class="px-4 py-3 text-gray-600 bg-gray-50 border border-gray-50 focus:outline-none focus:bg-gray-100 hover:bg-gray-100 duration-100 cursor-pointer text-xl leading-3 font-normal"
           >
-            Space
+            <a
+              class="nav-link"
+              aria-current="page"
+              routerLink="/output"
+              routerLinkActive="active"
+            >
+              Output
+            </a>
           </li>
           <li
             (click)="selected = 'Game'; selectorDropdown()"
@@ -183,3 +205,4 @@
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>

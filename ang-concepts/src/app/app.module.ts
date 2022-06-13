@@ -12,9 +12,11 @@ import { HeaderModule } from './shared/header/header.module';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductComponent } from './base/in-out/output/product/product.component';
 import { ProductdetailsComponent } from './base/in-out/output/productdetails/productdetails.component';
-const appRoutes: Routes = [
-  { path: 'inputoutput', component: BaseComponent },
-]
+import { TestComponent } from './test/test.component';
+import { LoginComponent } from './base/in-out/output/login/login.component';
+import { LoginDetailsComponent } from './base/in-out/output/login-details/login-details.component';
+
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,9 @@ const appRoutes: Routes = [
     NameComponent,
     ProductComponent,
     ProductdetailsComponent,
+    TestComponent,
+    LoginComponent,
+    LoginDetailsComponent,
 
   ],
   imports: [
@@ -32,10 +37,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatSliderModule,
     HeaderModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true }
-    )
+    RouterModule
 
   ],
   providers: [],
