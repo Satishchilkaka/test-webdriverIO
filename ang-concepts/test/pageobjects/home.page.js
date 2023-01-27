@@ -35,8 +35,20 @@ class LoginPage extends Page {
      * overwrite specific options to adapt it to page object
      */
     open () {
-        return super.open('output');
+        return super.open('home');
     }
 }
 
-module.exports = new LoginPage();
+
+class HomePage extends Page {
+    get searchBar() {
+        return $('[data-autocomplete="5"]')
+    }
+
+    async search(searchTerm) {
+        await this.searchBar.setValue(searchTerm)
+    }
+
+}
+
+module.exports = new HomePage();
