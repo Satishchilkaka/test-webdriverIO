@@ -24,3 +24,7 @@ jobs:
           wait-on: http://localhost:4200/
           wait-on-timeout: 100000
           command: npm run test
+          env:
+            working-directory: my-app
+            run: npm install
+            echo: install the my app
