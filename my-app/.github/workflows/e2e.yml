@@ -1,47 +1,65 @@
-name: E2E Test with Cypress on Chrome
+name: Test
 on:
-  pull_request:
+  push: { branches: master }
 
 jobs:
-  my_first_job:
-    name: My first job
+  test:
+    name: Matrix test
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./my-app
+    strategy:
+      matrix: { dir: ['ang-concepts', 'my-app'] }
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Run E2E tests
-        uses: cypress-io/github-action@v4.2.0
-        with:
-          start: npm start
-          record: false
-          browser: chrome
-          wait-on: http://localhost:4200/
-          wait-on-timeout: 100000
-          command: npm install
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Do something with the matrix value
+      working-directory: ${{ matrix.dir }}
+      run: pwd
+# name: E2E Test with Cypress on Chrome
+# on:
+#   pull_request:
+
+# jobs:
+#   my_first_job:
+#     name: My first job
+#     runs-on: ubuntu-latest
+#     env:
+#       working-directory: ./my-app
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+#       - name: Set up node
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 16
+#       - name: Run E2E tests
+#         uses: cypress-io/github-action@v4.2.0
+#         with:
+#           start: npm start
+#           record: false
+#           browser: chrome
+#           wait-on: http://localhost:4200/
+#           wait-on-timeout: 100000
+#           command: npm install
       
 
-  my_second_job:
-    name: My second job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Run E2E tests
-        uses: cypress-io/github-action@v4.2.0
-        with:
-          start: npm start
-          record: false
-          browser: chrome
-          wait-on: http://localhost:4200/
-          wait-on-timeout: 100000
-          command: npm install
+#   my_second_job:
+#     name: My second job
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+#       - name: Set up node
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 16
+#       - name: Run E2E tests
+#         uses: cypress-io/github-action@v4.2.0
+#         with:
+#           start: npm start
+#           record: false
+#           browser: chrome
+#           wait-on: http://localhost:4200/
+#           wait-on-timeout: 100000
+#           command: npm install
