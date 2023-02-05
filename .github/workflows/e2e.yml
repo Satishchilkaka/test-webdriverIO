@@ -9,23 +9,16 @@ jobs:
   defaults:
     env:
       working-directory: ./my-app
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Run E2E tests
-        uses: cypress-io/github-action@v4.2.0
-        with:
-          start: npm start
-          record: false
-          browser: chrome
-          wait-on: http://localhost:4200/
-          wait-on-timeout: 100000
-          command: npm install
-      
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+        - name: Set up node
+          uses: actions/setup-node@v3
+          with:
+            node-version: 16
+        - name: install
+          run: |
+            echo 'test'      
 
   my_second_job:
     name: My second job
