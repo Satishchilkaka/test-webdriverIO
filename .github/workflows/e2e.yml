@@ -6,6 +6,8 @@ jobs:
   my_first_job:
     name: My first job
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./ang-concepts
     steps:
       - name: Checkout
         uses: actions/checkout@v3
