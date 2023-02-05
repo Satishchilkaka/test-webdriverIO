@@ -6,19 +6,18 @@ jobs:
   my_first_job:
     name: My first job
     runs-on: ubuntu-latest
-    defaults:
-      env:
-        working-directory: ./my-app
-          steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-            - name: Set up node
-              uses: actions/setup-node@v3
-              with:
-                node-version: 16
-            - name: install
-              run: |
-                echo 'test'
+    env:
+      working-directory: ./my-app
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v3
+          - name: Set up node
+            uses: actions/setup-node@v3
+            with:
+              node-version: 16
+          - name: install
+            run: |
+              echo 'test'
 
       
 
