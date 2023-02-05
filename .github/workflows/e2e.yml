@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 14
           start: npm install
-  job1:
+  job2:
     runs-on: ubuntu-latest
     env:
       working-directory: ang-concepts
