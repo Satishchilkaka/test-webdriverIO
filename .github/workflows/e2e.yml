@@ -6,7 +6,7 @@ jobs:
   my_first_job:
     name: My first job
     runs-on: ubuntu-latest
-    env:
+    run:
       working-directory: ./my-app
     steps:
       - name: Checkout
