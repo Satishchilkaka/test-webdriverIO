@@ -4,6 +4,8 @@ jobs:
   cypress-run:
     name: Cypress run
     runs-on: ubuntu-latest
+    echo: |
+      'test'
     defaults:
       run:
         working-directory: ./my-app
