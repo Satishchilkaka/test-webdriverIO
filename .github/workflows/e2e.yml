@@ -12,7 +12,7 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
       - name: Run E2E tests
         uses: cypress-io/github-action@v4.2.0
         with:
@@ -21,7 +21,6 @@ jobs:
           browser: chrome
           wait-on: http://localhost:4200/
           wait-on-timeout: 100000
-          echo: run first
           command: npm install
       
 
@@ -34,7 +33,7 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
       - name: Run E2E tests
         uses: cypress-io/github-action@v4.2.0
         with:
@@ -43,5 +42,4 @@ jobs:
           browser: chrome
           wait-on: http://localhost:4200/
           wait-on-timeout: 100000
-          echo: run second
           command: npm install
