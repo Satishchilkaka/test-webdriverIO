@@ -8,9 +8,7 @@ on:
     - master
 
 jobs:
-# Mobile folder job.
-  build_apk:
-    name: Build
+  job1:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -24,10 +22,7 @@ jobs:
         with:
           node-version: 14
           start: npm install
-jobs:
-# Mobile folder job.
-  build_apk:
-    name: Build
+  job2:
     runs-on: ubuntu-latest
     defaults:
       run:
