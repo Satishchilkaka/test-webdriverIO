@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: /home/runner/work/test-webdriverIO/my-app
+        working-directory: ./home/runner/work/test-webdriverIO/my-app
     steps:
       - name: Checkout
         uses: actions/checkout@v3
