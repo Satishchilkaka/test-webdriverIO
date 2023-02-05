@@ -4,9 +4,8 @@ jobs:
   cypress-run:
     name: Cypress run
     runs-on: ubuntu-latest
-    env:
-      run:
-        working-directory: ./my-app
+    run:
+      working-directory: my-app
     steps:
       - name: Checkout
         uses: actions/checkout@v3
