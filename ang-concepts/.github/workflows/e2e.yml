@@ -10,9 +10,13 @@ jobs:
       matrix: { dir: ['./my-app', './ang-concepts'] }
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Do something with the matrix value
-      working-directory: ${{ matrix.dir }}
-      run: npm install
+         - name: Setup Node
+        uses: actions/checkout@v3
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      
+      - name: Install dependencies
+        run: npm install 
+      - name: Do something with the matrix value
+        working-directory: ${{ matrix.dir }}
