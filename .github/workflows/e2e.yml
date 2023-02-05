@@ -4,7 +4,6 @@ jobs:
   cypress-run:
     name: Cypress run
     runs-on: ubuntu-latest
-    echo: "::debug::Set the Octocat variable"
     env:
       working-directory: ./test-webdriverIO/my-app
     steps:
