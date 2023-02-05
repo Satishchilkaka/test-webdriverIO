@@ -1,51 +1,18 @@
-name: End-to-end tests
-on: [push]
+name: Test
+on:
+  push: { branches: master }
+
 jobs:
-  job1: 
+  test:
+    name: Matrix test
     runs-on: ubuntu-latest
-    env:
-        working-directory: ./my-app
+    strategy:
+      matrix: { dir: ['./my-app', './ang-concepts'] }
+
     steps:
-      - name: Setup Node
-        uses: actions/checkout@v3
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      
-      - name: Install dependencies
-        run: npm install 
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-  job2:
-    runs-on: ubuntu-latest
-    env:
-        working-directory: ./ang-concepts
-    steps:
-      - name: Setup Node
-        uses: actions/checkout@v3
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      
-      - name: Install dependencies
-        run: npm install 
-
-
-  # cypress-run:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Setup Node
-  #       uses: actions/checkout@v3
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 16
-      
-  #     - name: Install dependencies
-  #       run: npm install 
-
-  #     - name: Checkout
-  #       uses: actions/checkout@v3
-  #     # Install NPM dependencies, cache them correctly
-  #     # and run all Cypress tests
-  #     - name: Cypress e2e test run
-  #       uses: cypress-io/github-action@v5
-  #       run: npm run e2e-test
+    - name: Do something with the matrix value
+      working-directory: ${{ matrix.dir }}
+      run: npm install
