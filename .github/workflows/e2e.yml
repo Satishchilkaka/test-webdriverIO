@@ -1,0 +1,46 @@
+name: CI/CD. 
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+# Mobile folder job.
+  build_apk:
+    name: Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+      # Mobile folder working directory.
+        working-directory: my-app
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          start: npm install
+jobs:
+# Mobile folder job.
+  build_apk:
+    name: Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+      # Mobile folder working directory.
+        working-directory: ang-concepts
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          start: npm install
+
+
+   
