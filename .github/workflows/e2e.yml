@@ -6,9 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     echo: |
       'test'
-    defaults:
-      run:
-        working-directory: ./my-app
+    env:
+      working-directory: ./test-webdriverIO/my-app
     steps:
       - name: Checkout
         uses: actions/checkout@v3
