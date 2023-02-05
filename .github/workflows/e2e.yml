@@ -13,7 +13,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
       - run: npm start
-        working-directory: /test-webdriverIO/my-app
+        working-directory: ./test-webdriverIO/my-app
 
 
       
