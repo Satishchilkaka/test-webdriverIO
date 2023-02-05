@@ -6,8 +6,9 @@ jobs:
   my_first_job:
     name: My first job
     runs-on: ubuntu-latest
-    run:
-      working-directory: ./my-app
+defaults:
+  env:
+    working-directory: ./my-app
     steps:
       - name: Checkout
         uses: actions/checkout@v3
