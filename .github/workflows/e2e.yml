@@ -1,19 +1,23 @@
-name: Cypress tests
-on: [push]
-jobs:
-  cypress-run:
-    name: Cypress run
-    runs-on: ubuntu-latest
-    run:
-      working-directory: my-app
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          project: ./my-app
+name: E2E Test with Cypress on Chrome
+on:
+  pull_request:
 
+jobs:
+  my_first_job:
+    name: My first job
+    runs-on: ubuntu-latest
+    env:
+      working-directory: /home/runner/work/test-webdriverIO/my-app
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v3
+          - name: Set up node
+            uses: actions/setup-node@v3
+            with:
+              node-version: 16
+          - name: install
+            run: |
+              echo 'test'
 
       
 
