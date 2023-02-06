@@ -23,8 +23,9 @@ jobs:
     steps:
       - name: config
 
-        working-directory: 
+        working-directory: ./
         run: |
+          pwd
           cd my-app
 
       - name: Checkout
