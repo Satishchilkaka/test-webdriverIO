@@ -2,18 +2,12 @@ name: Cypress tests
 on:
   pull_request:
 jobs:
-  job1:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: my-app
+  my_first_job:
     steps:
-      - name: Checkout
+      - name: Check out repository
         uses: actions/checkout@v3
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-      - run: npm start
+      - name: Use local my-action
+        uses: ./.github/actions/my-action
 
 
 
