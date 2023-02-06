@@ -29,6 +29,7 @@ jobs:
           pwd
           cd test-webdriverIO
           cd my-app
+          pwd
       - name: Cypress run
         uses: cypress-io/github-action@v5
 
