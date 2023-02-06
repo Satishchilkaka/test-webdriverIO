@@ -24,6 +24,7 @@ jobs:
       - name: config
         run: |
           pwd
+          ls
         # working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
 
       - name: Checkout
