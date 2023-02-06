@@ -8,7 +8,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
       - name: Use local my-action
-        uses: ./.github/actions/e2e
+        uses: ./.github/workflows/e2e
 
 
 
