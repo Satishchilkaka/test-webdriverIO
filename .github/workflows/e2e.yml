@@ -1,31 +1,34 @@
-name: Cypress tests
-on:
-  pull_request:
-jobs:
-  my_first_job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
-      - name: Use local my-action
-        uses: ./.github/workflows/e2e
-
-
-
-
+# name: Cypress tests
+# on:
+#   pull_request:
 # jobs:
-#   cypress-run:
-#     name: Cypress run
+#   my_first_job:
 #     runs-on: ubuntu-latest
-#     env:
-#       working-directory: ./test-webdriverIO/my-app
 #     steps:
-#       - name: Checkout
+#       - name: Check out repository
 #         uses: actions/checkout@v3
-#       - name: Cypress run
-#         uses: cypress-io/github-action@v5
-#       - run: npm start
-#         working-directory: ./test-webdriverIO/my-app
+#       - name: Use local my-action
+#         uses: ./.github/workflows/e2e
+
+
+
+
+jobs:
+  cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./test-webdriverIO/my-app
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+      - name: pwd
+        run: |
+          pwd
+      # - run: npm start
+      #   working-directory: ./test-webdriverIO/my-app
 
 
       
