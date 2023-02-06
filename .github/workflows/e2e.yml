@@ -22,8 +22,7 @@ jobs:
     #   working-directory: ./test-webdriverIO/my-app
     steps:
       - name: config
-        run: |
-          ls
+
         working-directory: 
         run: |
           cd my-app
