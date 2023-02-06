@@ -30,14 +30,15 @@ jobs:
           pwd
 
   
-      - name: Cypress run
 
-        uses: cypress-io/github-action@v5
       - name: config
 
         working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
         run: |
-          ls
+          pwd
+      - name: Cypress run
+
+        uses: cypress-io/github-action@v5
 
       # - run: npm start
       #   working-directory: ./test-webdriverIO/my-app
