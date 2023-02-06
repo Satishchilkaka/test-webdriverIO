@@ -20,11 +20,13 @@ jobs:
     env:
       working-directory: ./test-webdriverIO/my-app
     steps:
-      - name: pwd
-        run: |
-          pwd
+
       - name: Checkout
         uses: actions/checkout@v3
+      - name: 
+        run: |
+          cd ..
+          cd my-app
       - name: Cypress run
         uses: cypress-io/github-action@v5
 
