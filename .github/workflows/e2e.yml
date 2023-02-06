@@ -24,7 +24,7 @@ jobs:
       - name: config
         run: |
           pwd
-        working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
+        # working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
 
       - name: Checkout
         uses: actions/checkout@v3
