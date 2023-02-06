@@ -1,6 +1,6 @@
-# name: Cypress tests
-# on:
-#   pull_request:
+name: Cypress tests
+on:
+  pull_request:
 # jobs:
 #   my_first_job:
 #     runs-on: ubuntu-latest
