@@ -26,7 +26,6 @@ jobs:
         working-directory: my-app
         run: |
           pwd
-          ls
 
       - name: Checkout
         uses: actions/checkout@v3
