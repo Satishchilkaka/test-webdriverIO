@@ -13,32 +13,32 @@ on:
 
 
 
-jobs:
-  cypress-run:
-    name: Cypress run
-    runs-on: ubuntu-latest
+# jobs:
+#   cypress-run:
+#     name: Cypress run
+#     runs-on: ubuntu-latest
 
     # env:
     #   working-directory: ./test-webdriverIO/my-app
-    steps:
+    # steps:
 
 
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: 
-        run: |
-          pwd
+    #   - name: Checkout
+    #     uses: actions/checkout@v3
+    #   - name: 
+    #     run: |
+    #       pwd
 
   
 
-      - name: config
+    #   - name: config
 
-        working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
-        run: |
-          pwd
-      - name: install
-        run: npm install
-        working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
+    #     working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
+    #     run: |
+    #       pwd
+    #   - name: install
+    #     run: npm install
+    #     working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
 
 
 
@@ -48,24 +48,19 @@ jobs:
 
       
 
-#   my_second_job:
-#     name: My second job
-#     runs-on: ubuntu-latest
-#     env: 
-#       working-directory: ./ang-concepts
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v3
-#       - name: Set up node
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: 16
-#       - name: Run E2E tests
-#         uses: cypress-io/github-action@v4.2.0
-#         with:
-#           start: npm start
-#           record: false
-#           browser: chrome
-#           wait-on: http://localhost:4200/
-#           wait-on-timeout: 100000
-#           command: npm install
+  my_second_job:
+    name: My second job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Run E2E tests
+        uses: cypress-io/github-action@v5.0.8
+        with:
+          start: npm install
+          command: npm run e2e
+          working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
