@@ -34,7 +34,7 @@ jobs:
           pwd
 
   
-      - name: Cypress run
+      - name: config
         working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
       - name: cy
         uses: cypress-io/github-action@v5
