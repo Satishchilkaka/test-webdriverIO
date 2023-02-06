@@ -36,9 +36,10 @@ jobs:
         working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
         run: |
           pwd
-      - name: Cypress run
+      - name: install
+        run: npm install
 
-        uses: cypress-io/github-action@v5
+
 
       # - run: npm start
       #   working-directory: ./test-webdriverIO/my-app
