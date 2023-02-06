@@ -23,10 +23,10 @@ jobs:
     steps:
       - name: config
 
-        working-directory: ./
+        working-directory: ./my-app
         run: |
           pwd
-          cd my-app
+          cls
 
       - name: Checkout
         uses: actions/checkout@v3
