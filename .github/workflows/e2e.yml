@@ -26,7 +26,7 @@ jobs:
       - name: 
         run: |
           cd ..
-          cd my-app
+          pwd
       - name: Cypress run
         uses: cypress-io/github-action@v5
 
