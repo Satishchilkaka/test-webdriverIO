@@ -21,11 +21,7 @@ jobs:
     # env:
     #   working-directory: ./test-webdriverIO/my-app
     steps:
-      - name: config
 
-        # working-directory: my-app
-        run: |
-          ls
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -34,10 +30,14 @@ jobs:
           pwd
 
   
-      - name: config
-        working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
-      - name: cy
+      - name: Cypress run
+
         uses: cypress-io/github-action@v5
+      - name: config
+
+        working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
+        run: |
+          ls
 
       # - run: npm start
       #   working-directory: ./test-webdriverIO/my-app
