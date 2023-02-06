@@ -24,7 +24,9 @@ jobs:
       - name: config
         run: |
           ls
-        # working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
+        working-directory: 
+        run: |
+          cd my-app
 
       - name: Checkout
         uses: actions/checkout@v3
