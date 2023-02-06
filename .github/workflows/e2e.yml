@@ -17,8 +17,8 @@ jobs:
   cypress-run:
     name: Cypress run
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./test-webdriverIO/my-app
+    # env:
+    #   working-directory: ./test-webdriverIO/my-app
     steps:
 
       - name: Checkout
