@@ -31,10 +31,10 @@ jobs:
           cd test-webdriverIO
           cd my-app
           pwd
-        env:
-          working-directory: ./test-webdriverIO/my-app
-        run: |
-          pwd
+      env:
+        working-directory: ./test-webdriverIO/my-app
+          run: |
+            pwd
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
