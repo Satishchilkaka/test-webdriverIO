@@ -19,9 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       working-directory: ./test-webdriverIO/my-app
-        - name: test
-          run: |
-            pwd
+      - name: test
+        run: |
+          pwd
     # env:
     #   working-directory: ./test-webdriverIO/my-app
     steps:
