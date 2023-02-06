@@ -22,6 +22,8 @@ jobs:
     #   working-directory: ./test-webdriverIO/my-app
     steps:
       - name: config
+        run: |
+          pwd
         working-directory: /home/runner/work/test-webdriverIO/test-webdriverIO/my-app
         run: |
           pwd
