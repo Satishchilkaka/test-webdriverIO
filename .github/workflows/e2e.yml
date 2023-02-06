@@ -17,6 +17,11 @@ jobs:
   cypress-run:
     name: Cypress run
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./test-webdriverIO/my-app
+        - name: test
+          run: |
+            pwd
     # env:
     #   working-directory: ./test-webdriverIO/my-app
     steps:
@@ -30,11 +35,7 @@ jobs:
           cd test-webdriverIO
           cd my-app
           pwd
-      env:
-        working-directory: ./test-webdriverIO/my-app
-          run: |
-            pwd
-
+  
       - name: Cypress run
         uses: cypress-io/github-action@v5
 
