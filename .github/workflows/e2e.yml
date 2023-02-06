@@ -22,7 +22,7 @@ jobs:
     #   working-directory: ./test-webdriverIO/my-app
     steps:
       - name: config
-        working-directory: ./my-app
+        working-directory: /my-app
         run: |
           pwd
       - name: Checkout
