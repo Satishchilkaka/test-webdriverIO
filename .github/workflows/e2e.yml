@@ -27,8 +27,7 @@ jobs:
         run: |
           cd ..
           pwd
-          cd ang-concepts
-          pwd
+          ls
       - name: Cypress run
         uses: cypress-io/github-action@v5
 
