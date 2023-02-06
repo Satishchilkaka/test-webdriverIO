@@ -20,7 +20,6 @@ jobs:
     # env:
     #   working-directory: ./test-webdriverIO/my-app
     steps:
-
       - name: Checkout
         uses: actions/checkout@v3
       - name: 
