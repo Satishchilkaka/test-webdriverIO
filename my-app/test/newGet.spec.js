@@ -82,7 +82,7 @@ describe('GET', () => {
         .get(`?id=${id3}&id=${id5}&id=${id10}`)
         .set('Accept', 'application/json')
         .expect(function (response) {
-          expect(response.body).to.eql(actualData)
+          expect(response.body).to.eql(id3id5id10)
            // assert.strictEqual(response.body.length, 13)
           })
           .end(function (err) {

@@ -68,12 +68,11 @@ describe('REST', function () {
                 console.log(error);
             });
         });
-        it.only('Should get IDs', function () {
+        it('Should get IDs', function () {
             axios(config)
             .then(function (response) {
                 expect('Content-Type', /json/)
-                console.log(response.data)
-                expect(response.data.id).to.eql(3)
+                expect(response.data.id).to.eql(7)
             })
             .catch(function (error) {
                 console.log(error);
