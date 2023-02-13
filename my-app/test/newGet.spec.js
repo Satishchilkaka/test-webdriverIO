@@ -2,52 +2,69 @@
 // const expect = chai.expect;
 // const request = require('supertest');
 // const assert = require('assert');
-// const express = require('express');
 // const actualData = require('../actualData/objects.json')
+// const id3id5id10 = require('../actualData/id3id5id10.json')
 // describe('GET', () => {
 //   const baseUrl = 'https://api.restful-api.dev/objects'
 //   const id3 = 3
 //   const id5 = 5
 //   const id10 = 10
 //   describe('Get all objects', function () {
+  
 //     it('Should have JSON response', function (done) {
 //       request(baseUrl)
 //         .get('/')
 //         .set('Accept', 'application/json')
-//         .expect('Content-Type', /json/)
-//         .expect(200, done);
+//         .expect('Content-Type', /json/, done)
+        
 //     });
 //     it('Should have 200 status code', function (done) {
 //       request(baseUrl)
 //         .get('/')
 //         .set('Accept', 'application/json')
-//         .expect(200, done);
+//         .expect(function (response) {
+//           expect(response.status).to.equal(200)
+//         })
+//         .end(function (err) {
+//           if (err) {
+//             throw err;
+//           } 
+//           done();
+//         });
 //     });
-//     it('Should have 13 objects', function () {
+//     it('Should have 13 objects', function (done) {
 //       request(baseUrl)
 //         .get('/')
-//         .set('Accept', 'application/json').then((response, err) => {
-//           expect(response.body.length).equal(13)
+//         .set('Accept', 'application/json')
+//         .expect(function (response) {
+//         expect(response.body.length).to.eql(13)
+//          // assert.strictEqual(response.body.length, 13)
+//         })
+//         .end(function (err) {
 //           if (err) {
 //             throw err;
-//           }
-//         })
+//           } 
+//           done();
+//         });
 //     })
-//     it('Should have expected response', async (done) => {
+//     it('Should have expected response', function (done){
 //       request(baseUrl)
 //         .get('/')
-//         .set('Accept', 'application/json').then((response, err) => {
-//           assertEquals(actualData, response.body)
-//            expect(response.body.length).eql(15)
-//            assert.strictEqual(13, 15)
-//            assert.deepEqual(response.body.length, 1)
-//            console.log('le', response.body.length)
-//           if (err) {
-//             throw err;
-//           }
-          
-//         })
-//         done()
+//         .set('Accept', 'application/json')
+        
+//         .expect(function (response) {
+//           // Can be used anyone
+//           expect(actualData).to.eql(response.body)
+//           expect(actualData).deep.equal(response.body)
+//           assert.deepStrictEqual( actualData, response.body)
+//           })
+//           .end(function (err) {
+//             if (err) {
+//               throw err;
+//             } 
+//             done();
+//           });
+        
 //     })
 
 //   });
@@ -60,18 +77,20 @@
 //         .expect('Content-Type', /json/)
 //         .expect(200, done);
 //     });
-//     it('Should have JSON response', function () {
+//     it('Should have 3 objects', function (done) {
 //       request(baseUrl)
 //         .get(`?id=${id3}&id=${id5}&id=${id10}`)
 //         .set('Accept', 'application/json')
-//         .then((response, err) => {
-//           console.log(response.body)
-//         //  assertEquals(id1, response.body.id)
-//           expect(response.body.name).equal(15)
-//           if (err) {
-//             throw err;
-//           }
-//         })
+//         .expect(function (response) {
+//           expect(response.body).to.eql(actualData)
+//            // assert.strictEqual(response.body.length, 13)
+//           })
+//           .end(function (err) {
+//             if (err) {
+//               throw err;
+//             } 
+//             done();
+//           });
 //     });
 
 //   });
